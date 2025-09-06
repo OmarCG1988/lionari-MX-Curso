@@ -1,75 +1,52 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+section { 
+  scroll-margin-top: 90px; 
 }
 
-body {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, auto);
-  height: 100vh;
-  gap: 4px;
+.navbar .nav-link {
+  position: relative;
+  padding-bottom: .25rem;
 }
 
-header {
-  background-color: green;
-  grid-column-start: 1;
-  grid-column-end: 4;
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: currentColor;
+  opacity: .25;
+  transition: width .2s ease;
 }
 
-aside {
-  background-color: blue;
-  grid-row-start: 2;
-  grid-row-end: 5
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  width: 100%;
 }
 
-section.titulo {
-  background-color: yellow;
-  grid-column-start: 2;
-  grid-column-end: 4;
+.btn {
+  border-radius: .75rem;
 }
 
-section.seccion01 {
-  background-color: orange;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  min-height: 85px;
+.card {
+  border-radius: 1rem;
 }
 
-section.seccion02 {
-  background-color: purple;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  min-height: 85px;
+/* Imágenes del portafolio */
+#portafolio img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #e9ecef;
 }
 
-section.seccion03 {
-  background-color: pink;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 85px;
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(13, 110, 253, .5);
+  outline-offset: 2px;
 }
 
-article {
-  background-color: lightblue;
-  flex-basis: 20%;
+.logo-lionari {
+    height: 90px;
+    width: auto;
+    display: block;
 }
-
-footer {
-  background-color: red;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 5;
-  grid-row-end: 6;
-}
-
